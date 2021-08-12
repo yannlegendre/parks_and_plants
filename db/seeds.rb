@@ -1,11 +1,8 @@
-Garden.destroy_all if Rails.env.development?
+# db/seeds.rb
+Tag.destroy_all if Rails.env.development?
 
-Garden.create!(
-  name: "My Little Garden",
-  banner_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/garden_1.jpg"
-)
+names = ["Fruit tree", "Cactus", "Greasy plant", "Flower", "Ferns", "Conifers"]
 
-Garden.create!(
-  name: "My Other Garden",
-  banner_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/garden_2.jpg"
-)
+names.each do |name|
+  Tag.create!(name: name)
+end
